@@ -12,7 +12,7 @@
   <body>
     <script>
       function muestraReloj() {
-        var fechaFinal = new Date(2023, 7, 28, 18, 0, 0);
+        var fechaFinal = new Date(2023, 7, 28, 12, 0, 0);
         var fechaActual = new Date();
         var fechaDiferencia = fechaFinal - fechaActual;
         var diasRestantes = Math.floor(fechaDiferencia / (1000 * 60 * 60 * 24));
@@ -39,30 +39,10 @@
           segundosRestantes = "0" + segundosRestantes;
         }
 
-        document.getElementById("reloj").innerHTML =
-          diasRestantes +
-          ":" +
-          horasRestantes +
-          ":" +
-          minutosRestantes +
-          ":" +
-          segundosRestantes;
-        console.log(
-          fechaActual +
-            "FA " +
-            fechaFinal +
-            "FF " +
-            fechaDiferencia +
-            "FD " +
-            diasRestantes +
-            "DR " +
-            horasRestantes +
-            "HR " +
-            minutosRestantes +
-            "MR " +
-            segundosRestantes +
-            "SR "
-        );
+        document.getElementById("dias").innerHTML = diasRestantes;
+        document.getElementById("horas").innerHTML = horasRestantes;
+        document.getElementById("minutos").innerHTML = minutosRestantes;
+        document.getElementById("segundos").innerHTML = segundosRestantes;
       }
 
       window.onload = function () {
@@ -76,7 +56,6 @@
           class="w-[21%] h-[10%] object-cover mx-[1.2%] my-[2.8%]"
           src="https://lavelada.es/wp-content/uploads/2023/05/VeladaIII.png"
         />
-        <div id="reloj"></div>
         <div class="justify-end flex flex-grow h-[10%]">
           <a
             class="text-white border-[3px] bg-black border-black rounded font-medium px-0 py-2 text-xl hover:bg-neutral-700 hover:border-neutral-700 transition-colors backdrop-blur-md text-center w-[13%] mx-[4.5%]"
@@ -192,13 +171,62 @@
           />
         </div>
       </section>
+      <section>
+        <div
+          class="bg-slate-900 w-[70%] h-[30%] top-[105%] absolute flex insert-0 gap-x-2 left-1/2 -translate-x-1/2 justify-center z-50"
+        >
+          <div class="flex flex-col flex-1">
+            <div
+              class="text-center justify-center text-white text-4xl pt-[2%] flex flex-row flex-1"
+            >
+              <h1 class="italic"><b>QUEDAN</b></h1>
+            </div>
+            <div
+              class="flex flex-row flex-1 text-white justify-between [&>div>div>b>h1]:text-7xl [&>div>div>b]:italic [&>div]:px-[4%] [&>div]:pb-[6%] px-[10%]"
+            >
+              <div>
+                <div class="flex flex-col flex-1 justify-center">
+                  <b><h1 id="dias"></h1></b>
+                </div>
+                <div class="flex flex-col flex-1 items-center justify-center">
+                  <b>DIAS</b>
+                </div>
+              </div>
+              <div>
+                <div class="flex flex-col flex-1 items-center justify-center">
+                  <b><h1 id="horas"></h1></b>
+                </div>
+                <div class="flex flex-col flex-1 items-center justify-center">
+                  <b>HORAS</b>
+                </div>
+              </div>
+              <div>
+                <div class="flex flex-col flex-1 items-center justify-center">
+                  <b><h1 id="minutos"></h1></b>
+                </div>
+                <div class="flex flex-col flex-1 items-center justify-center">
+                  <b>MINUTOS</b>
+                </div>
+              </div>
+              <div>
+                <div class="flex flex-col flex-1 items-center justify-center">
+                  <b><h1 id="segundos"></h1></b>
+                </div>
+                <div class="flex flex-col flex-1 items-center justify-center">
+                  <b>SEGUNDOS</b>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section
         class={`flex justify-between relative overflow-y-hidden overflow-x-hidden
 		h-[50vh] md:h-screen bg-white
 		`}
       >
         <div
-          class="relative flex flex-grow insert-0 gap-x-2 left-1/2 -translate-x-1/2 justify-center [&>div>img] p-[2%]"
+          class="relative flex flex-grow insert-0 gap-x-2 left-1/2 -translate-x-1/2 justify-center [&>div>img] pt-[10%]"
         >
           <div class="[&>img]: w-[45%] pl-[3%] pt-[1%]">
             <img
@@ -214,7 +242,7 @@
           </div>
           <div class="px-[5%]">
             <img
-              class="h-[65%] animate-fade-left animate-duration-[2000ms]"
+              class="h-[75%] animate-fade-left animate-duration-[2000ms] pt-[5%]"
               src="https://lavelada.es/wp-content/uploads/2023/05/alsaMap.jpg"
               alt=""
             />
