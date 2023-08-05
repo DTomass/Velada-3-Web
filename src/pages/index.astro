@@ -1,19 +1,82 @@
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://lavelada.es/wp-content/uploads/2023/05/cropped-favicon-32x32.jpg"
+    />
     <meta name="viewport" content="width=device-width" />
-    <title>Copia - La velada del año 3</title>
+    <title>La Velada del año III - Copia</title>
   </head>
-  <body
-    class="bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-800 via-slate-900 to-zinc-950"
-  >
+  <body>
+    <script>
+      function muestraReloj() {
+        var fechaFinal = new Date(2023, 7, 28, 18, 0, 0);
+        var fechaActual = new Date();
+        var fechaDiferencia = fechaFinal - fechaActual;
+        var diasRestantes = Math.floor(fechaDiferencia / (1000 * 60 * 60 * 24));
+        var horasRestantes = Math.floor(
+          (fechaDiferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        var minutosRestantes = Math.floor(
+          (fechaDiferencia % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        var segundosRestantes = Math.floor(
+          (fechaDiferencia % (1000 * 60)) / 1000
+        );
+
+        if (diasRestantes < 10) {
+          diasRestantes = "0" + diasRestantes;
+        }
+        if (horasRestantes < 10) {
+          horasRestantes = "0" + horasRestantes;
+        }
+        if (minutosRestantes < 10) {
+          minutosRestantes = "0" + minutosRestantes;
+        }
+        if (segundosRestantes < 10) {
+          segundosRestantes = "0" + segundosRestantes;
+        }
+
+        document.getElementById("reloj").innerHTML =
+          diasRestantes +
+          ":" +
+          horasRestantes +
+          ":" +
+          minutosRestantes +
+          ":" +
+          segundosRestantes;
+        console.log(
+          fechaActual +
+            "FA " +
+            fechaFinal +
+            "FF " +
+            fechaDiferencia +
+            "FD " +
+            diasRestantes +
+            "DR " +
+            horasRestantes +
+            "HR " +
+            minutosRestantes +
+            "MR " +
+            segundosRestantes +
+            "SR "
+        );
+      }
+
+      window.onload = function () {
+        muestraReloj();
+        setInterval(muestraReloj, 1000);
+      };
+    </script>
     <header id="landing-header" class="flex top-0 w-full justify-between">
       <div class="bg-white w-screen h-[20%] flex flex-grow items-center">
         <img
           class="w-[21%] h-[10%] object-cover mx-[1.2%] my-[2.8%]"
           src="https://lavelada.es/wp-content/uploads/2023/05/VeladaIII.png"
         />
+        <div id="reloj"></div>
         <div class="justify-end flex flex-grow h-[10%]">
           <a
             class="text-white border-[3px] bg-black border-black rounded font-medium px-0 py-2 text-xl hover:bg-neutral-700 hover:border-neutral-700 transition-colors backdrop-blur-md text-center w-[13%] mx-[4.5%]"
@@ -29,7 +92,7 @@
 		[&>div>img]:absolute [&>div>img]:bottom-0 
 		[&>div>img]:w-auto 
 		[&>div>img]:animate-ease-in-out [&>div>img]:animate-duration-1000
-		h-[50vh] md:h-screen border-b border-white/10
+		h-[50vh] md:h-screen border-b border-white/10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-800 via-slate-900 to-zinc-950
 		`}
       >
         <div>
