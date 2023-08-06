@@ -226,31 +226,84 @@
 		`}
       >
         <div
-          class="relative flex flex-grow insert-0 gap-x-2 left-1/2 -translate-x-1/2 justify-center [&>div>img] pt-[10%]"
+          class="relative flex flex-grow flex-1 insert-0 gap-x-2 left-1/2 -translate-x-1/2 justify-between px-[5%] pt-[13%]"
         >
-          <div class="[&>img]: w-[45%] pl-[3%] pt-[1%]">
+          <div class="pr-[2%]">
             <img
-              class="pb-[5%] animate-fade-right animate-duration-[2000ms]"
+              class="animate-fade-right animate-duration-[2000ms] pb-[3%]"
               src="https://lavelada.es/wp-content/uploads/2023/05/INH_INH_Retail_598_LaVeladadelAnoIIIConsigue20E_IMG_580x200_NA_H_1_ES_ES_Apr2023_.png"
               alt=""
             />
             <img
-              class="animate-fade-up animate-duration-[2000ms]"
+              class="animate-fade-up animate-duration-[2000ms] w-full pt-[3%]"
               src="https://lavelada.es/wp-content/uploads/2023/06/Baner550x180-02.png"
               alt=""
             />
           </div>
-          <div class="px-[5%]">
+          <div class="w-[50%] pt-[2%]">
             <img
-              class="h-[75%] animate-fade-left animate-duration-[2000ms] pt-[5%]"
+              class="w-[90%] animate-fade-left animate-duration-[2000ms]"
               src="https://lavelada.es/wp-content/uploads/2023/05/alsaMap.jpg"
               alt=""
             />
           </div>
         </div>
       </section>
-
-      <footer></footer>
+      <section
+        class={`flex justify-between relative overflow-y-hidden overflow-x-hidden h-[50vh] md:h-screen bg-white`}
+      >
+        <div
+          class="absolute left-1/2 -translate-x-1/2 flex flex-1 w-full px-[5%]"
+        >
+          <img
+            src="https://lavelada.es/wp-content/uploads/2023/05/Artistas.jpg"
+            alt=""
+          />
+        </div>
+      </section>
     </main>
+    <footer class="relative">
+      <div class="flex flex-col">
+        <img
+          src="https://lavelada.es/wp-content/uploads/2023/05/fondov1.jpg"
+          alt=""
+          style="height: 62vh; object-fit: cover; object-position: center bottom;"
+        />
+        <div class="flex gap-1 absolute top-[7%] px-[46%]">
+          <div class="w-full flex flex-col items-center">
+            <img
+              src="https://tighestimepieces.com/wp-content/uploads/2016/11/Instagram-icon-WHITE.png"
+              alt=""
+              class="h-[37%] animate-fade-right animate-duration-1000"
+            />
+          </div>
+          <div class="w-full flex flex-col items-center">
+            <img
+              src="https://www.pinclipart.com/picdir/big/138-1388876_2017-intertech-americas-corp-white-twitter-bird-transparent.png"
+              alt=""
+              class="h-[40%] animate-fade-left animate-duration-1000"
+            />
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center">
+          <img
+            src="https://lavelada.es/wp-content/uploads/2023/05/LOGOVA-1-327x200_c.png"
+            alt=""
+            class="absolute top-[17%] w-[26%] animate-jump-in animate-duration-1000"
+          />
+        </div>
+        <div class="flex flex-col items-center">
+          <img
+            src="https://lavelada.es/wp-content/uploads/2023/06/sponsors-2180x120_c.png"
+            alt=""
+            class="absolute top-[65%] w-[66%] animate-flip-up animate-duration-1000"
+          />
+        </div>
+        <div class="bg-black text-white py-[2%] text-sm bottom-0 text-center">
+          © 2023 La Velada del Año | Todos los derechos reservados.
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
